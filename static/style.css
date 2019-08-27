@@ -1,0 +1,76 @@
+/* 
+CSS for zachkohl.com
+By Zach Kohl
+*/
+
+
+
+/* 
+========================================================
+container
+========================================================
+ */
+
+html, body {
+
+}
+
+
+/* 
+========================================================
+first pane
+========================================================
+ */
+
+
+.firstpane{
+    min-width:100vh;
+    min-height: 100vh;
+    background-color:#C1D3E4
+}
+
+.navbar{
+    min-width:100%;
+    padding-top:1rem;
+    background-color:#171B31;
+}
+
+.navlist{
+    margin-right:5rem;
+}
+
+.navlist li{
+    list-style-type: none;
+    display:inline;
+    margin-left:10rem;
+ 
+}
+
+.navlist li a{
+    color:white;
+    
+   }
+
+.navlist li a:hover{
+ color:#C1D3E4;
+ text-decoration:none;
+}
+
+/* 
+========================================================
+second pane
+========================================================
+ */
+
+
+ /* 
+========================================================
+third pane
+========================================================
+ */
+
+ .secondpane{
+    min-width:100vh;
+    min-height: 100vh;
+    background-color:#EDE4DD
+ }
