@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-  {{!-- The front end of this site makes heavy use of the documentation and examples from bootstrap. http://getbootstrap.com/, Thier license can be found at https://creativecommons.org/licenses/by/3.0/ --}}
-  {{!-- <!-- Required meta tags --> --}}
+  <!-- The front end of this site makes heavy use of the documentation and examples from bootstrap. http://getbootstrap.com/, Thier license can be found at https://creativecommons.org/licenses/by/3.0/ -->
+  <!-- Required meta tags --> 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  {{!-- <!-- Bootstrap CSS --> --}}
+
+  <!-- Bootstrap CSS --> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -15,41 +16,35 @@
 </head>
 
 <body>
-  <div class="container-fluid my-container">
+  <div class="wrapper">
+  <div class="container-fluid">
 
 <div class="row firstpane">
-<div class="col">
-<div class="row navbar justify-content-end">
-  <div class="navlist">
-    <ul>
-      <li>
-      <a href="#">examples</a>  
-      </li>
-      <li>
-        <a href="#">about</a>  
-      </li>
-      <li>
-       <a href="#">contact</a>  
-      </li>
+
+    <nav>
+        <ul class='nav-links'>
+                <li><a href="#">examples</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
     </ul>
-  </div>{{!-- end navlist --}}
-</div>{{!-- end navbar --}}
+    <div class="burger">
+        <div class="line1 toggle"></div>
+        <div class="line2 toggle"></div>
+        <div class="line3 toggle"></div>
+    </div>
+    </nav>
 
-</div>{{!-- end column of the first pane --}}
 
-
-</div>{{!-- end the first pane --}}
+</div><!-- end the first pane -->
 
 <div class="row secondpane">
-  <div class="col">
-    
-  </div>
+
 </div>
 
-  </div> {{!-- End container --}}
-
-  {{!-- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS --> --}}
+  </div> <!-- End container -->
+</div>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -59,12 +54,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <script>
-    $(document).ready(function () {
-
-
-    })//end document.ready
-  </script>
+    <script src="app.js"></script>
 
 
 

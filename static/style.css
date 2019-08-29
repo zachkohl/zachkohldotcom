@@ -11,9 +11,6 @@ container
 ========================================================
  */
 
-html, body {
-
-}
 
 
 /* 
@@ -23,39 +20,146 @@ first pane
  */
 
 
-.firstpane{
-    min-width:100vh;
+
+
+ .firstpane{
+    min-width:100%;
     min-height: 100vh;
     background-color:#C1D3E4
-}
+} 
 
-.navbar{
+
+
+nav{
+    height:100px;
     min-width:100%;
-    padding-top:1rem;
     background-color:#171B31;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    margin:0;
+
 }
 
-.navlist{
-    margin-right:5rem;
+nav ul{
+    margin:0;
+    padding:0; 
 }
 
-.navlist li{
+
+
+
+.nav-links li{
+    display:inline-flex;
     list-style-type: none;
-    display:inline;
-    margin-left:10rem;
- 
-}
-
-.navlist li a{
-    color:white;
+    margin:0;
+    padding-right:1rem;
     
-   }
-
-.navlist li a:hover{
- color:#C1D3E4;
- text-decoration:none;
 }
 
+.nav-links a{
+    color:rgba(255, 255, 255, 0.918);
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.918);
+    margin:5px;
+}
+
+
+
+@media screen and (max-width:768px){
+
+    .wrapper{
+        overflow-x:hidden;
+        width:100%;
+        position: absolute;
+       }
+      
+.nav-links{
+    position: absolute;
+    height:100vh;
+    top:0;
+    right:0px;
+    background-color:#171B31;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    width: 50%;
+    z-index: 1;
+padding:0;
+margin:auto;
+transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+
+}
+
+
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50xp);
+      
+    }
+    to{
+        opacity:1;
+        transform: translateX(0px)
+    }
+}
+
+.nav-links li{
+    opacity: 1;
+  margin:auto;
+}
+
+.nav-links a{
+    
+vertical-align: middle;
+text-align: center;
+}
+
+
+
+
+.burger{
+    position: relative;
+    display:block;
+    margin-left:auto;
+    margin-right:5%;
+  z-index: 4;
+
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+.toogle .line1{
+    transform: rotate(-45deg) translate(-.3rem, .6rem)
+}
+
+.toogle .line2{
+    opacity: 0;
+}
+
+.toogle .line3{
+    transform: rotate(-45deg) translate(-.3rem, .6rem)
+}
+
+}
 /* 
 ========================================================
 second pane
@@ -73,4 +177,4 @@ third pane
     min-width:100vh;
     min-height: 100vh;
     background-color:#EDE4DD
- }
+ } 
