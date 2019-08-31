@@ -20,34 +20,39 @@
   <div class="container-fluid">
 
 <div class="row firstpane">
-<div class="col">
+<div class="col firstpaneColumn">
 <div class="row">
   
   
     <nav>
         <ul class='nav-links'>
-                <li><a href="#">examples</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a href="#secondpane">examples</a></li>
+                <li><a href="#thirdpane">about</a></li>
+                <li><a href="#fourthpane">contact</a></li>
     </ul>
     <div class="burger">
         <div class="line1 toggle"></div>
         <div class="line2 toggle"></div>
         <div class="line3 toggle"></div>
     </div>
+    
     </nav>
 </div>
 
 <div class="row"><div class="bluebox">
-
-  <img src="images/about.jpg" id="aboutImage">
-  <img src="images/exampleDutyCalculator.jpg" id="exampleImage">
-
-  <div class="frontImageDiv">
-   <img src="images/databasebackground.png" id="databaseImage">
+ <a href="#thirdpane"> <img src="images/aboutNormal.jpg" class="aboutImage"></a>
+ <a href="#secondpane">  <img src="images/exampleNormal.png" class="exampleImage"></a>
+  <div class="contactImageDiv">
+  <button class='contactButton btn btn-success  btn-lg' data-toggle="modal" data-target="#exampleModal" id="contactButton">CONTACT</button>
+  
   </div>
 
+
+
 </div></div>
+<div class=" ExampleLink MobileFirstPane"><a href="#secondpane">EXAMPLES</a></div>
+<div class=" aboutLink MobileFirstPane"><a href="#thirdpane">ABOUT</a></div>
+<div class=" ContactLink MobileFirstPane"><a href="#fourthpane">CONTACT</a></div>
 
 </div>
 
@@ -65,25 +70,90 @@
 </div><!-- end the first pane -->
 
 <div class="row secondpane">
+<a name="secondpane"></a>
+<div class="col videoColumn">
+  <div class="row titleRow">
+    <h1>Example project: Duty Estimator</h1>
+  </div>
+<div class="row videoContainer">
+<iframe src="https://player.vimeo.com/video/356952675" width="640" height="336" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="vimeo"></iframe>
+</div>
+</div>
+
+<div class="col descriptionColumn">
+<div class="row descriptionBigTextRow">
+  <h2>Using government data to beat the competition</h2>
+</div>
+<div class="row">
+  <p>This project invoved using an Iframe to deploy tool that allows users to make sense of complicated tariff data</p>
+</div>
+</div>
+
+
+
+</div>
+
+<div class="row thridpane">
+<a name="thirdpane"></a>
+
+<div class="col aboutThridPaneCol">
+<div class="row descriptionBigTextRow">
+  <h1>About Me</h1>
+</div>
+<div class="row textCenter">
+  <p>I love technology, and I love solving problems. If you have a problem you need solved, contact me and lets get something started</p>
+  
+</div>
+</div><!--end descriptonColumn-->
+
+<div class="col puctureCol">
+  <div class="row titleRow">
+    <h2>Using web applications to solve your problem</h2>
+  </div>
+<div class="row pictureCenter">
+<img src="images/about.jpg">
+</div>
+</div><!--end videoColumn-->
+  
+</div><!--end thirdpane-->
+
+<div class="row fourthpane">
+  <a name="fourthpane"></a>
 <div class="col">
-<div class="row"><div class="animation"></div></div>
-<div class="row"><div class="bluebox"></div></div>
-
+  <h1>
+    CONTACT
+  </h1>
+  <p>Let's get together and meet up to discuss your projects needs</p>
+  <p>Also, feel free to check out my<a href="https://www.linkedin.com/in/zacharykohl/" target="blank">LinkedIn</a> profile.</p>
+    <p>Code samples are available on my <a href="https://github.com/zachkohl" target="blank">GitHub</a> profile.</p>
+ <button class='btn btn-success  btn-lg' data-toggle="modal" data-target="#exampleModal" id="contactButton">CONTACT INFO</button>
 </div>
-</div>
-
-
-
-
-
-
-
-</div>
-
+</div><!--end fourth pane-->
 
 
 
   </div> <!-- End container -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How to contact</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
@@ -97,6 +167,9 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script>
+
+    </script>
 
 
 
