@@ -13,22 +13,29 @@ container
 
 
 
+
 /* 
 ========================================================
-first pane
+NavBar
 ========================================================
  */
 
-
-/* 
-NAVBAR
- */
-
- .firstpane{
+.navContainer{
+    position:fixed;
+    height:100px;
     min-width:100%;
-    min-height: 100vh;
-    background-color:#C1D3E4
-} 
+    background-color:#171B31;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-left:1%;
+}
+
+.branding a{
+color:white;
+text-decoration: none;
+}
 
 .nomarg{
     min-width:100%;
@@ -38,14 +45,11 @@ NAVBAR
 
 
 nav{
-    height:100px;
-    min-width:100%;
     background-color:#171B31;
     display:flex;
     justify-content:flex-end;
     align-items:center;
     margin:0;
-    position: relative;
 
 }
 
@@ -175,14 +179,20 @@ END NAVBAR
 
 
 
-/* 
-Animation
+
+
+
+
+ /* ========================================================
+ first pane
+ ======================================================== 
  */
-
-
-
-
-
+  .firstpane{
+     min-width:100%;
+     min-height: 100vh;
+     background-color:#C1D3E4;
+     padding-top:5%;
+ } 
 
 
 
@@ -338,6 +348,7 @@ display:table-cell;
     }
 
 .ExampleLink{
+    padding-top:100px;
     background-color:blue;
 }
 

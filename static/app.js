@@ -8,6 +8,13 @@ const navSlideAnimation = () => {
         nav.classList.toggle('nav-active');
 
         navlinks.forEach((link, index) => {
+//add eventlistener
+link.addEventListener('click',()=>{
+    console.log('test')
+    nav.classList.remove('nav-active');
+});
+
+//add animation
             if (link.style.animation) {
                 link.style.animation = '';
             } else {
