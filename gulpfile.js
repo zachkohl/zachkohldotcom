@@ -1,11 +1,27 @@
-var gulp =('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
+const {series, src, dest}= require('gulp');
+const sass = require('gulp-sass');
 
-gulp.task('sass',function(){
-    return gulp.search('./sass/main.sccs').pipe(()).pip(gulp.endsWith('./css')).pip(browserSync.stream());
-})
 
-gulp.task('serve', ['sass'],function(){
-    browserSync.init(server:'./')
-})
+sass.compiler = require('node-sass');
+
+function defaultTask(cb) {
+    // place code for your default task here
+    cb();
+  }
+  
+  
+  function runSass () {
+    return src('./sass/**/*.scss')
+      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+      .pipe(dest('./static'));
+  };
+
+  exports.runSass = runSass;
+  exports.default = series(runSass);
+
+
+  //Documentation
+  //https://www.npmjs.com/package/gulp-sass
+  //https://gulpjs.com/docs/en/getting-started/creating-tasks
+
+//https://medium.com/@adambretz/heroku-gulp-c96dc3a8044d
