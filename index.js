@@ -1,4 +1,4 @@
-config = require('./config');
+config = require('./loaders');
 
 config.app.get('/', function (req, res) {
 
@@ -9,3 +9,7 @@ config.app.get('/navbar', function (req, res) {
 
    res.render('navbar')
 });//end '/navbar'
+
+
+
+routes = require('./routes/routes.js')(config);

@@ -14,7 +14,7 @@ function defaultTask(cb) {
  
   function runSass (cb) {
     console.log('running sass compilation')
-   src('./sass/**/*.scss')
+   src('./dev/sass/*.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(dest('./static'));
   cb();
@@ -30,7 +30,7 @@ var nodemon = require('gulp-nodemon');
   function browserSyncTask(cb){
     browserSync.init({
         proxy:"localhost:3000",
-        files:["sass/*.*"],
+        files:["dev/sass/*.*"],
         browser: "brave",
         port:5000
     })
@@ -66,7 +66,7 @@ function nodemonTask(cb){
   if (process.env.NODE_ENV !== 'production') {
 
       exports.default = series(runSass,nodemonTask,browserSyncTask,function(){
-        watch('sass/*',series(runSass));
+        watch('dev/sass/*',series(runSass));
       
      });
         }else{
@@ -82,3 +82,7 @@ function nodemonTask(cb){
 //https://medium.com/@adambretz/heroku-gulp-c96dc3a8044d
 
 //https://gist.github.com/sogko/b53d33d4f3b40d3b4b2e //nice work showing how to hook up browser sync and nodemon
+
+//In conclusion, make sure you pay attention to what is going on. Are you in the production or development environments? 
+//What files do you want your system to be watching? This system works best if you don't watch everything. 
+//Make sure you check Browser-Sync, Nodemon, and the Watch line to make sure they are all pointed the way you want. 
