@@ -47,3 +47,4 @@ Structure
 |--README.md;
 |--.gitingore
 |--lessonslearned.txt (notes not pushed to github)
+|--working.sql (copies of what has been run on the database)

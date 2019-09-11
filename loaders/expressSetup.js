@@ -11,11 +11,12 @@ app.use(bodyParser.urlencoded({
   }));
   app.use(bodyParser.json()); 
 var exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({defaultLayout: 'blank'}));
+app.engine('handlebars', exphbs({defaultLayout: 'default'}));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '../views'));
 app.use(express.static('static'));
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+let server = app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+app.server = server;
 
 
 
