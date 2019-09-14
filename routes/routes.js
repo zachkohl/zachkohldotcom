@@ -18,9 +18,14 @@ function routes(config) {
         req.session.userId = user.id;
         req.session.save(function (err) {req.session.reload(function(){ return true;});});}
 
+    // app.get('/', function (req, res) {
+    //     res.locals.layout = "blank";
+    //     res.render('home');
+    // });//end '/'
+
     app.get('/', function (req, res) {
         res.locals.layout = "blank";
-        res.render('home');
+        res.render('pages/homepage',{message:'<p>This is gonna be huge!</p>'});
     });//end '/'
 
     app.get('/login', function (req, res) {

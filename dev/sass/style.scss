@@ -4,6 +4,23 @@ By Zach Kohl
 */
 
 
+/* 
+========================================================
+Editor stuff
+========================================================
+ */
+
+.split{
+    height:100%;
+    width:25%;
+    position: fixed;
+    overflow-x:hidden;
+    background-color:red;
+    z-index:200;
+}
+
+
+
 
 /* 
 ========================================================
@@ -20,10 +37,15 @@ NavBar
 ========================================================
  */
  //
+ .wrapperEditor{
+    width:75%;
+    float: right;
+}
+
 .navContainer{
     position:fixed;
     height:100px;
-    min-width:100%;
+    min-width:75%;
     background-color:#171B31;
     z-index:100;
     display:flex;
@@ -31,6 +53,10 @@ NavBar
     align-items:center;
     padding-left:1%;
 }
+
+
+
+
 
 .branding a{
 color:white;
@@ -189,7 +215,7 @@ END NAVBAR
  */
   .firstpane{
      min-width:100%;
-     min-height: 100vh;
+     min-height: 75%;
      background-color:#C1D3E4;
      padding-top:5%;
  } 

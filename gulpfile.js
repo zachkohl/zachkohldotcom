@@ -20,6 +20,13 @@ function defaultTask(cb) {
   cb();
 };
 
+function moveJavascript (cb) {
+  console.log('running sass compilation')
+ src('./dev/javascript/*.js')
+  .pipe(dest('./static'));
+cb();
+};
+
 
 
 //Only for Dev
@@ -30,7 +37,7 @@ var nodemon = require('gulp-nodemon');
   function browserSyncTask(cb){
     browserSync.init({
         proxy:"localhost:3000",
-        files:["dev/sass/*.*"],
+        files:["dev/sass/*.*","dev/javascript/*.*","views/pages/*.*"],
         browser: "brave",
         port:5000
     })
@@ -65,8 +72,8 @@ function nodemonTask(cb){
 
   if (process.env.NODE_ENV !== 'production') {
 
-      exports.default = series(runSass,nodemonTask,browserSyncTask,function(){
-        watch('dev/sass/*',series(runSass));
+      exports.default = series(runSass,moveJavascript,nodemonTask,browserSyncTask,function(){
+        watch(['dev/sass/*','dev/javascript/*','views/pages/*'],series(runSass,moveJavascript));
       
      });
         }else{
