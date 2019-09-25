@@ -6,14 +6,18 @@ function configurations(config) {
 query = config.query;
 
 async function getuser(username) {
-    try {
+   
         let promise = new Promise(async (resolve, reject) => {
 
 
             let text = 'SELECT * FROM users WHERE username = $1'; // everything after RETURNING are the columns that you want in what gets returned, use a * for everything. 
             let values = [username];
             let response = await query(text, values);
-            if (!response.rows[0]) throw 'username not in database';
+            if (!response.rows[0]){
+                resolve(false);
+            }else{
+
+           
 
             //build the user object;
             user = {
@@ -27,13 +31,10 @@ async function getuser(username) {
 
 
             resolve(user);
+             }//end else
         })//end new promise
         return promise;
-    }
-    catch (err) {
-        console.log(err)
-        return false;
-    }
+  
 
 
 }//end getuser

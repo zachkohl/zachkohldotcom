@@ -37,7 +37,18 @@ after(function(){
     config.app.server.close();
 })
 
-it('user enters a username, password, and email', async function (){
+
+it('user enters a  username that has not been created yet', async function(){
+    response3 = await controllers.login.logOn('tester', 'notThePassword').catch(function(error){console.log(error)});
+    valid3 = {
+        template: 'login',
+        parameters:
+            { message: 'username, password, or both, failed. Please try again', email: '', firstName: '', lastName: '', target: '' }
+    };
+    expect(response3).to.eql(valid3); //see https://medium.com/building-ibotta/testing-arrays-and-objects-with-chai-js-4b372310fe6d
+})
+
+it('user registers a username, password, and email', async function (){
     //prep code
    
     //test code
@@ -46,6 +57,21 @@ it('user enters a username, password, and email', async function (){
     expect(response1).to.eql(valid1); //see https://medium.com/building-ibotta/testing-arrays-and-objects-with-chai-js-4b372310fe6d
   
 })
+
+it('user registers a duplicate', async function (){
+    //prep code
+   
+    //test code
+    response1 = await controllers.login.register('tester', 'password', 'zach.kohl@gmail.com');
+    valid1 = {
+        template: 'login/register',
+        parameters:
+            { message: 'username or email unavailable', email: '', firstName: '', lastName: '', target: '' }
+    };
+    expect(response1).to.eql(valid1); //see https://medium.com/building-ibotta/testing-arrays-and-objects-with-chai-js-4b372310fe6d
+  
+})
+
 
 it('user enters a dublicate username, password, and email', async function(){
     response2 = await controllers.login.register('tester', 'password', 'zach.kohl@gmail.com').catch(function(error){console.log(error)});

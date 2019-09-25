@@ -12,10 +12,14 @@ login = require('./login');
 login.configurations(config, models);
 
 
+editor = require('./editor');
+editor.configurations(config, models);
+
 
 
 
 
 module.exports.configurations = configurations;
 module.exports.login = login;
+module.exports.editor = editor;
 

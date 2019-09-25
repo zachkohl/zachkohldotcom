@@ -20,25 +20,14 @@
 
 <body>
 
+{{{editorHTML}}}
 
- <div class="split">
-     <div id="drill">
-         <div id='drill2'>
-             <p id="paragraph">hello world</p>
-         </div>
-     </div>
-     <div id="summernote"></div>
-     <div id="editor1">
-     </div>
-          <div id="editor2">
-     </div>
- </div>
  {{!-- Below needs to be added to template logic --}}
-  <div class="wrapper wrapperEditor">
+  <div class="wrapper {{{wrapperClass}}}">
      
   <div class="container-fluid">
 <div class="row ">
-  <div class="navContainer">
+  <div class="navContainer {{{navContainerWithEditor}}}">
    <div class="branding">
      <a href="#"><h1>Welcome to ZachKohl.com</h1></a>
     </div>
@@ -108,7 +97,7 @@
   <h2>Using government data to beat the competition</h2>
 </div>
 <div class="row" id="content1">
-  {{{message}}}
+  {{{content}}}
 </div>
 </div>
 
@@ -180,8 +169,7 @@
 </div>
   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -193,9 +181,9 @@
     {{!-- Need to add to template logic. Veu needs to be swapped out for production.  https://vuejs.org/v2/guide/installation.html--}}
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
-    <script src="editor.js"></script>
+    {{!-- <script src="editor.js"></script> --}}
     <script>
-
+{{{script}}}
     </script>
 
 

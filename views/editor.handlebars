@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- The front end of this site makes heavy use of the documentation and examples from bootstrap. http://getbootstrap.com/, Thier license can be found at https://creativecommons.org/licenses/by/3.0/ -->
+  <!-- Required meta tags --> 
+  <meta charset="utf-8">
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+   {{!-- Below needs to be added to template logic --}}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+
+  <title>Zach Kohl</title>
+</head>
+
+<body>
+
+<div class="split">
+<div id="drill">
+    <div id='drill2'>
+        
+    </div>
+</div>
+<div id="summernote"></div>
+<div id="editor1">
+</div>
+     <div id="editor2">
+</div>
+<div id=EditorSaveDIV>
+<button id="EditorSaveBTN">SAVE</buttn>
+</div>
+</div>
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    {{!-- Need to add to template logic. Veu needs to be swapped out for production.  https://vuejs.org/v2/guide/installation.html--}}
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    {{!-- <script src="editor.js"></script> --}}
+    <script>
+$(document).ready(function() {
+ var json = '{{{package}}}';
+ json = JSON.parse(json);
+
+var keys = Object.keys(json);
+
+for(let i=0;i<keys.length;i++){
+ let node = document.createElement('div',{id:keys[i]});
+ let title = document.createElement('p');
+ let text = document.createTextNode(keys[i]);
+ title.appendChild(text);
+
+ //document.getElementById('summernote').appendChild(title);
+  document.getElementById('summernote').appendChild(node);
+
+let target = '#'+keys[i];
+console.log(target)
+ $('#summernote').summernote();
+
+}//end for loop
+
+   
+ // string = document.getElementById("content1").innerHTML;
+ // $('#summernote').summernote('code',string)
+
+  $('#EditorSaveDIV').on('click', '#EditorSaveBTN', function () {
+      let package = JSON.stringify({content:$('#summernote').summernote('code'),slug:'{{{slug}}}'});
+      console.log(package)
+    $.ajax({
+        url: "/editor",
+        data: {package:package},
+        type: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+    }).done(function (msg) {
+        console.log(msg)
+    })//end done
+        .fail(function (xhr, status, errorThrown) {
+            alert("Sorry, there was a problem!");
+            console.log("Error: " + errorThrown);
+            console.log("Status: " + status);
+            console.dir(xhr);
+        })
+
+
+}) //end click save button
+
+
+})//end document.ready
+    </script>
+
+
+
+
+</body>
+
+</html>

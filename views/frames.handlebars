@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- The front end of this site makes heavy use of the documentation and examples from bootstrap. http://getbootstrap.com/, Thier license can be found at https://creativecommons.org/licenses/by/3.0/ -->
+  <!-- Required meta tags --> 
+  <meta charset="utf-8">
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+   {{!-- Below needs to be added to template logic --}}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+
+  <title>Zach Kohl</title>
+</head>
+<frameset cols = "25%,75%">
+    <frame name = 'left' src = '/editor?path={{{path}}}' />
+    <frame name = 'right' src = '{{{path}}}?displayNormal=true' />
+
+    <noframes>
+        <p>You need a more up to date browser</p>
+    </noframes>
+</frameset>
+<body>
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+   
+    {{!-- Need to add to template logic. Veu needs to be swapped out for production.  https://vuejs.org/v2/guide/installation.html--}}
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    {{!-- <script src="editor.js"></script> --}}
+    <script>
+
+    </script>
+
+
+
+
+</body>
+
+</html>

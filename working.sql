@@ -3,6 +3,7 @@
 
 --To enter PSQL: heroku pg:psql --app paccenter
 
+--Enter the redis database: heroku redis:cli --app zachkohl
 
 -- CREATE TABLE "session" (
 --   "sid" varchar NOT NULL COLLATE "default",
@@ -22,3 +23,11 @@
 --  role VARCHAR(255) NOT NULL,
 --  category VARCHAR(255)
 -- );
+
+
+-- CREATE TABLE pages (
+-- id serial primary key,
+-- slug VARCHAR (255) UNIQUE NOT NULL,
+-- content jsonb
+-- );
+-- INSERT INTO pages (slug,content) VALUES('/', '{"content1":"hello world"}');

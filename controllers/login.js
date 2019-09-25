@@ -9,8 +9,15 @@ function targetOBJ(passedEmail,passedFirstname,passedLastname,target) {
 }
 
 function checkTargetOBJ(targetOBJ){
+    console.log(targetOBJ)
     if(typeof targetOBJ==='undefined'){
-        return{ email: '', firstName: '', lastName: '', target: '' }
+        return{ email: null, firstName: null, lastName: null, target: null }
+    }else{
+        (targetOBJ.email==='undefined') ? '':targetOBJ.email;
+        (targetOBJ.firstName==='undefined') ? '':targetOBJ.firstName;
+        (targetOBJ.lastName==='undefined') ? '':targetOBJ.lastName;
+        (targetOBJ.target==='undefined') ? '':targetOBJ.target;
+        return targetOBJ;
     }
     
 }
@@ -18,14 +25,23 @@ function checkTargetOBJ(targetOBJ){
 
 async function logOn(username, password, targetOBJ) {
     targetOBJ = checkTargetOBJ(targetOBJ);
-    response = {};
-    return new Promise(async(resolve,reject)=> {
+    let errorToClient = {template:'login/login',parameters:{ message: 'username, password, or both, failed. Please try again', email: targetOBJ.email, firstName: targetOBJ.firstName, lastName: targetOBJ.lastName, target: targetOBJ.target }};
 
+    response = {};
+   // console.log(targetOBJ)
+    return new Promise(async(resolve,reject)=> {
 
  
 
         //Check the if the username exist, if it does, return the hash and userrole. If it does not exist, it should throw an error
         user = await models.login.getuser(username);
+
+        //Deal with no user situation:
+        if(user ===false){
+            resolve(errorToClient);
+            return;
+        }
+
 
         bcrypt.compare(password, user.storedhash, function (bycrptError, bycrptResponse) {
 
@@ -41,7 +57,9 @@ async function logOn(username, password, targetOBJ) {
                     }
                 }
                 else{
-                    resolve({template:'login',parameters:{ message: 'username, password, or both, failed. Please try again', email: targetOBJ.email, firstName: targetOBJ.firstName, lastName: targetOBJ.lastName, target: targetOBJ.target }});
+                    console.log('got here')
+                    resolve(errorToClient);
+                    return;
                 }
             
       
@@ -68,10 +86,14 @@ targetOBJ = checkTargetOBJ(targetOBJ);
         resolve(response);
     } else {
         user = await models.login.registeruser(username,email,hash,userrole).then(()=>{
-        (user.username===username) ? resolve(logOn(username, password, targetOBJ)) : resolve({template:'login',parameters:{ message: 'username, password, or both, failed. Please try again', email: targetOBJ.email, firstName: targetOBJ.firstName, lastName: targetOBJ.lastName, target: targetOB.target }});
+            if(user.username===username){
+         resolve(logOn(username, password, targetOBJ))}else{
+
+         resolve({template:'login/login',parameters:{ message: 'username, password, or both, failed. Please try again', email: targetOBJ.email, firstName: targetOBJ.firstName, lastName: targetOBJ.lastName, target: targetOB.target }});
+        }//
         }).catch(err =>{
             console.log(err);
-            resolve({template:'register',parameters:{ message: 'username unavailable', email: targetOBJ.email, firstName: targetOBJ.firstName, lastName: targetOBJ.lastName, target: targetOBJ.target }});
+            resolve({template:'login/register',parameters:{ message: 'username or email unavailable', email: targetOBJ.email, firstName: targetOBJ.firstName, lastName: targetOBJ.lastName, target: targetOBJ.target }});
             
     });
 }//end else
