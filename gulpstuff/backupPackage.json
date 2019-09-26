@@ -1,0 +1,55 @@
+{
+    "name": "stargarnet",
+    "version": "1.0.0",
+    "description": "homepage for stargarnet.io",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node index",
+      "postinstall": "gulp default"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/zachkohl/stargarnet.git"
+    },
+    "author": "zach kohl",
+    "bugs": {
+      "url": "https://github.com/zachkohl/stargarnet/issues"
+    },
+    "homepage": "https://github.com/zachkohl/KingsClub#readme",
+    "engines": {
+      "node": "8.9.1"
+    },
+    "dependencies": {
+      "bcrypt": "^3.0.6",
+      "body-parser": "^1.19.0",
+      "chai": "^4.2.0",
+      "chai-http": "^4.3.0",
+      "connect-pg-simple": "^6.0.1",
+      "connect-redis": "^4.0.2",
+      "dotenv": "^6.2.0",
+      "express": "^4.17.1",
+      "express-handlebars": "^3.1.0",
+      "express-session": "^1.16.2",
+      "gulp": "^4.0.2",
+      "gulp-sass": "^4.0.2",
+      "helmet": "^3.20.0",
+      "lodash": "^4.17.15",
+      "mocha": "^6.2.0",
+      "nock": "^11.3.3",
+      "node-sass": "^4.12.0",
+      "pg": "^7.12.1",
+      "redis": "^2.8.0"
+    },
+    "devDependencies": {
+      "browser-sync": "^2.26.7",
+      "css-loader": "^3.2.0",
+      "gulp-nodemon": "^2.4.2",
+      "nyc": "^14.1.1",
+      "style-loader": "^1.0.0",
+      "supertest": "^4.0.2",
+      "webpack": "^4.41.0",
+      "webpack-cli": "^3.3.9"
+    }
+  }
+  
