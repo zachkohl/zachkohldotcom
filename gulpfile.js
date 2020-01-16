@@ -1,5 +1,6 @@
 const {watch, series, src, dest}= require('gulp');
 const sass = require('gulp-sass');
+var babel = require("gulp-babel");
 
 
 
@@ -23,6 +24,7 @@ function defaultTask(cb) {
 function moveJavascript (cb) {
   console.log('running sass compilation')
  src('./dev/javascript/*.js')
+ .pipe(babel())
   .pipe(dest('./static'));
 cb();
 };

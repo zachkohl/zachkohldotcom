@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- The front end of this site makes heavy use of the documentation and examples from bootstrap. http://getbootstrap.com/, Thier license can be found at https://creativecommons.org/licenses/by/3.0/ -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Zach Kohl</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="navContainer">
+                    <div class="branding">
+                        <a href="#">
+                            <h1>Welcome to ZachKohl.com</h1>
+                        </a>
+                    </div>
+                    <nav>
+
+                        <ul class='nav-links'>
+                            <li><a href="#secondpane">examples</a></li>
+                            <li><a href="#thirdpane">about</a></li>
+                            <li><a href="#fourthpane">contact</a></li>
+                        </ul>
+                        <div class="burger">
+                            <div class="line1 toggle"></div>
+                            <div class="line2 toggle"></div>
+                            <div class="line3 toggle"></div>
+                        </div>
+
+                    </nav>
+                </div>
+                <!--end nav container-->
+            </div>
+            <div class="row firstpane">
+                <div class="col firstpaneColumn">
+
+
+                    <div class="row">
+                        <div class="bluebox">
+                            <a href="#thirdpane"> <img src="images/aboutNormal.jpg" class="aboutImage"></a>
+                            <a href="#secondpane"> <img src="images/exampleNormal.png" class="exampleImage"></a>
+                            <div class="contactImageDiv">
+                                <button class='contactButton btn btn-success  btn-lg' data-toggle="modal"
+                                    data-target="#exampleModal" id="contactButton">CONTACT</button>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class=" ExampleLink MobileFirstPane"><a href="#secondpane">EXAMPLES</a></div>
+                    <div class=" aboutLink MobileFirstPane"><a href="#thirdpane">ABOUT</a></div>
+                    <div class=" ContactLink MobileFirstPane"><a href="#fourthpane">CONTACT</a></div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div><!-- end the first pane -->
+
+            <div class="row secondpane">
+
+                <iframe id="inlineFrameExample" title="Inline Frame Example" width="300" height="200"
+                    src="https://paccenterapi.herokuapp.com/campaignA/signup">
+                </iframe>
+
+                <div class="row">
+                    <p>This project invoved using an Iframe to deploy tool that allows users to make sense of
+                        complicated tariff data</p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="row thridpane">
+            <a name="thirdpane"></a>
+
+            <div class="col aboutThridPaneCol">
+                <div class="row descriptionBigTextRow">
+                    <h1>About Me</h1>
+                </div>
+                <div class="row textCenter">
+                    <p>I love technology, and I love solving problems. If you have a problem you need solved,
+                        contact me and lets get something started</p>
+
+                </div>
+            </div>
+            <!--end descriptonColumn-->
+
+            <div class="col puctureCol">
+                <div class="row titleRow">
+                    <h2>Using web applications to solve your problem</h2>
+                </div>
+                <div class="row pictureCenter">
+                    <img src="images/about.jpg">
+                </div>
+            </div>
+            <!--end videoColumn-->
+
+        </div>
+        <!--end thirdpane-->
+
+        <div class="row fourthpane">
+            <a name="fourthpane"></a>
+            <div class="col">
+                <h1>
+                    CONTACT
+                </h1>
+                <p>Let's get together and meet up to discuss your projects needs</p>
+                <p>Also, feel free to check out my<a href="https://www.linkedin.com/in/zacharykohl/"
+                        target="blank">LinkedIn</a> profile.</p>
+                <p>Code samples are available on my <a href="https://github.com/zachkohl" target="blank">GitHub</a>
+                    profile.</p>
+                <button class='btn btn-success  btn-lg' data-toggle="modal" data-target="#exampleModal"
+                    id="contactButton">CONTACT INFO</button>
+            </div>
+        </div>
+        <!--end fourth pane-->
+
+
+
+    </div> <!-- End container -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">How to contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script>
+
+    </script>
+
+
+
+
+</body>
+
+</html>
